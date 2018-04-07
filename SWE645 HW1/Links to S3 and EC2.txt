@@ -1,0 +1,4 @@
+/*Krishna Sindhuri Vemuri G01024066 SWE 645 Home Work 1 */
+/* Links to AWS S3 and EC2 */
+S3- https://s3.amazonaws.com/swe645-vemuri/index.html
+EC2- http://ec2-54-243-9-192.compute-1.amazonaws.com/Web/survey.html

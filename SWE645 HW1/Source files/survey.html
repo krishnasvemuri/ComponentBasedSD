@@ -1,0 +1,174 @@
+<!-- Krishna Sindhuri Vemuri G01024066 SWE 645 HomeWork 1 --> 
+<!-- This is the html code for the CS department survey page..  -->
+<html>
+   <head>
+      <title>
+         Welcome to the survey page
+      </title>
+   </head>
+   <body>
+      <style>
+         body {
+         background-color: 	#dfe3ee;
+         }
+		 input{
+		 color : #8b9dc3;
+		 }
+		 td,h1,thead,button,h4{
+		 color :#3b5998;
+		 }
+      </style>
+      <center>
+	  <h1>Computer Science Department Survey</h1>
+	  <h4><i> Krishna Sindhuri Vemuri G01024066</i></h2>
+		 <table border="1" width="45%" cellpadding="5">
+		   <thead>
+                <tr>
+                        <th colspan="2">Please fill in the fields given below to complete the survey</th>
+                    </tr>
+                </thead>
+            <tr>
+               <td>First name <span style="color:red;">* 
+               </td>
+               <td>
+                  <input id="firstname" type="text" name="firstname" maxlength="20" size="10" required="required" autofocus="autofocus" placeholder="Krishna" />
+               </td>
+            </tr>
+            <tr>
+            <tr>
+               <td>Last name <span style="color:red;">*
+               </td>
+               <td>
+                  <input id="lastname" type="text" name="lastname" maxlength="20" size="10" required="required" autofocus="autofocus" placeholder="Vemuri" />
+               </td>
+            </tr>
+            <tr>
+               <td>Street Address <span style="color:red;">*
+               <td>
+                  <input id="address" type="text" name="address" maxlength="20" size="20" required="required" placeholder="123, ABC Street" />
+               </td>
+            </tr>
+            <tr>
+               <td>City <span style="color:red;">*
+               </td>
+               <td>
+                  <input type="text" id="city" name="City" maxlength="20" size="10" placeholder="Ashburn" required="required"></span>
+               </td>
+            </tr>
+            <tr>
+               <td>State <span style="color:red;">*
+               </td>
+               <td>
+                  <input type="text" id="state" name="State" maxlength="20" size="10" placeholder="Virginia" required="required"></span>
+               </td>
+            </tr>
+            <tr>
+               <td>Zip <span style="color:red;">*
+               </td>
+               <td>
+                  <input name="zip" type="text" maxlength="5" id="zip" size ="5" placeholder="20148" required="required">
+               </td>
+            </tr>
+            <tr>
+               <td>Telephone <span style="color:red;">*
+               </td>
+               <td>
+                  <input id="phone" type="text" name="phone" maxlength="20" size="10" required= "required" placeholder="5712121212"/>
+               </td>
+            </tr>
+            <tr>
+               <td>E-Mail <span style="color:red;">*
+			   </td>
+               <td>
+                  <input id="email" type="e-mail" name="email" maxlength="20" size="20" required= "required" placeholder="example@gmu.edu"/>
+               </td>
+            </tr>
+            <tr>
+               <td>Date of Survey <span style="color:red;">*
+			   </td>
+               <td>
+                  <input id="dos" type="date" name="dos" maxlength="20" size="20" required="required"/>
+               </td>
+            </tr>
+            <tr>
+               <td> What did you like most about the campus?   <span style="color:red;">*
+               </td>
+			   <td>
+                  <label>
+                  <input id="students" type="checkbox" name="choice" value="students">Students
+                  </label>
+                  <br>
+                  <label>
+                  <input id="location" type="checkbox" name="choice" value="location">Location
+                  </label>
+                  <br>
+                  <label>
+                  <input id="campus" type="checkbox" name="choice" value="campus">Campus
+                  </label>
+                  <br>
+                  <label>
+                  <input id="atmosphere" type="checkbox" name="choice" value="atmosphere">Atmosphere
+                  </label>
+                  <br>
+                  <label>
+                  <input id="dorm rooms" type="checkbox" name="choice" value="dorm rooms">Dorm Rooms
+                  </label>
+                  <br>
+                  <label>
+                  <input id="sports" type="checkbox" name="choice" value="sports">Sports
+                  </label>
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>How were you interested in GMU?<span style="color:red;">*
+               </td>
+			   <td>
+                  <label>
+                  <input id="friends" type="radio" name="source" value="Friends">Friends
+                  </label>
+                  <br>
+                  <label>
+                  <input id="television" type="radio" name="source" value="Television">Television
+                  </label>
+                  <br>
+                  <label>
+                  <input id="internet" type="radio" name="source" value="Internet">Internet
+                  </label>
+                  <br>
+                  <label>
+                  <input id="others" type="radio" name="source" value="Others">Others
+                  </label>
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>Likelihood of recommending this school <span style="color:red;">*
+               </td>
+			   <td>
+                  <select>
+                     <option id="vl" value="Very Likely">Very Likely</option>
+                     <option id="l" value="Likely">Likely</option>
+                     <option id="ul" value="Unlikely">Unlikely</option>
+                  </select>
+               </td>
+            </tr>
+            <tr>
+               <td>Enter 10 numbers from 1 to 100 seperated by a comma for the Raffle</td>
+               <td>
+                  <input id= "inputval" type="text" placeholder="2,1,9,27,11,30,12,23,12,26" />
+               </td>
+            </tr>
+            <tr>
+               <td>Additional Comments:</td>
+               <td>
+                  <textarea id="comments" name="Additional Comments" rows="10" cols="30"></textarea>
+                  
+               </td>
+            </tr>
+         </table>
+		 <button type="submit" id="submit"><b>Submit</b></button>
+		  <button type="reset" id="submit"><b>Reset</b></button>
+		 </center>
+   </body>
+</html>
