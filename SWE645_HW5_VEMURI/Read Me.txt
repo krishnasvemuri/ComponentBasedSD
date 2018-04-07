@@ -1,0 +1,20 @@
+Krishna Sindhuri Vemuri G01024066 SWE645 HW5 Read me file
+
+This project contains two War files. One for the Server and the other for the Client implementation.
+
+I could not implement the project on the EC2, so just submitting tis project that works files on the local machine. 
+
+The Vemuri_Server implements the search as a Web Service. And the client server consumes the Search implementation .
+
+
+To run the project:
+
+1. Unzip the files Vemuri_Server and Vemuri_Client
+2. Export  Vemuri_Server and Vemuri_Client files onto Eclipse 
+3. Export the source files and all other required files into elipse
+4. Add external jar files required for JSF 2.2,Restful Services, Hibernate and MySQLconnector,JAXWS etc.
+5. Click RunAs and run it on Tomcat 7.0 server
+
+
+
+The link to the WSDL file is given on the search page of the client service(Vemuri_Client)
