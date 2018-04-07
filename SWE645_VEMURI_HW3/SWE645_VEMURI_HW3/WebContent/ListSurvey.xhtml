@@ -1,0 +1,84 @@
+<!-- Krishna Sindhuri Vemuri G01024066 SWE_645_HW3 -->
+<!-- This is the page that lists all the existing surveys -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>List of existing surveys</title>
+</h:head>
+<h:body>
+	<style>
+body {
+	background-color: #dfe3ee;
+}
+
+name {
+	color: #3b5998;
+}
+</style>
+	<p:dataTable var="survey" border="1"
+		value="#{studentserviceBean.surveys}">
+		<f:facet name="caption">List of all surveys</f:facet>
+		<p:column>
+			<f:facet name="header">First Name</f:facet>
+#{survey.firstName}
+</p:column>
+		<p:column>
+			<f:facet name="header">Last Name</f:facet>
+#{survey.lastName}
+</p:column>
+		<p:column>
+			<f:facet name="header">Street Address</f:facet>
+#{survey.address}
+</p:column>
+		<p:column>
+			<f:facet name="header">City</f:facet>
+#{survey.city}
+</p:column>
+		<p:column>
+			<f:facet name="header">Zip</f:facet>
+#{survey.zip}
+</p:column>
+		<p:column>
+			<f:facet name="header">Telephone</f:facet>
+#{survey.phone}
+</p:column>
+		<p:column>
+			<f:facet name="header">E-mail</f:facet>
+#{survey.email}
+</p:column>
+		<p:column>
+			<f:facet name="header">Date of Survey</f:facet>
+#{survey.dos}
+</p:column>
+		<p:column>
+			<f:facet name="header">Date of Start</f:facet>
+#{survey.dos1}
+</p:column>
+		<p:column>
+			<f:facet name="header">Liked most</f:facet>
+#{survey.likedMost1}
+</p:column>
+		<p:column>
+			<f:facet name="header">Interested in</f:facet>
+#{survey.interested}
+</p:column>
+		<p:column>
+			<f:facet name="header">Likelihood of recommending</f:facet>
+#{survey.likelihood}
+</p:column>
+		<p:column>
+			<f:facet name="header">Data Entered for Raffle</f:facet>
+#{survey.raffle}
+</p:column>
+		<p:column>
+			<f:facet name="header">Additional Comments</f:facet>
+#{survey.comments}
+</p:column>
+	</p:dataTable>
+
+</h:body>
+</html>

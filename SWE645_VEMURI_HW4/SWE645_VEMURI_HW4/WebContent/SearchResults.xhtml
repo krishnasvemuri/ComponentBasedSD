@@ -1,0 +1,119 @@
+<!-- Krishna Sindhuri Vemuri G01024066 SWE_645_HW4 -->
+<!-- This is the page that lists all the filtered surveys -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "htth://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Filtered List</title>
+</h:head>
+<h:body>
+	<style>
+body {
+	background-color: #dfe3ee;
+}
+
+name {
+	color: #3b5998;
+}
+</style>
+	<h:form>
+		<h:dataTable value="#{search.surveyList}" var="student"
+			border="2" styleClass="mainTable" captionClass="caption"
+			headerClass="heading">
+			<h:column>
+				<h:commandButton value="Delete"
+					actionListener="#{search.deleteRows(student.studentId)}" ajax="true"
+					event="click" update="data">
+
+					<f:ajax update="data"></f:ajax>
+				</h:commandButton>
+			</h:column>
+			<h:column>
+			<f:facet name="header">First Name</f:facet>
+#{student.firstName}
+</h:column>
+		<h:column>
+			<f:facet name="header">Last Name</f:facet>
+#{student.lastName}
+</h:column>
+		<h:column>
+			<f:facet name="header">Street Address</f:facet>
+#{student.address}
+</h:column>
+		<h:column>
+			<f:facet name="header">City</f:facet>
+#{student.city}
+</h:column>
+<h:column>
+			<f:facet name="header">State</f:facet>
+#{student.state}
+</h:column>
+
+		<h:column>
+			<f:facet name="header">Zip</f:facet>
+#{student.zip}
+</h:column>
+		<h:column>
+			<f:facet name="header">Telephone</f:facet>
+#{student.phone}
+</h:column>
+		<h:column>
+			<f:facet name="header">E-mail</f:facet>
+#{student.email}
+</h:column>
+		<h:column>
+			<f:facet name="header">Date of Survey</f:facet>
+#{student.dos}
+</h:column>
+		<h:column>
+			<f:facet name="header">Date of Start</f:facet>
+#{student.dos1}
+</h:column>
+		<h:column>
+			<f:facet name="header">Liked most</f:facet>
+#{student.likedMost}
+</h:column>
+		<h:column>
+			<f:facet name="header">Interested in</f:facet>
+#{student.interested}
+</h:column>
+		<h:column>
+			<f:facet name="header">Likelihood of recommending</f:facet>
+#{student.likelihood}
+</h:column>
+		<h:column>
+			<f:facet name="header">Data Entered for Raffle</f:facet>
+#{student.raffle}
+</h:column>
+		<h:column>
+			<f:facet name="header">Additional Comments</f:facet>
+#{student.comments}
+</h:column>
+	</h:dataTable>
+	
+ <br></br>
+ <br></br>
+           <b><h:link value="Updated List" outcome="ListSurveys.jsf"  ajax="false" /></b>
+
+ <br></br>
+ <br></br>
+	
+	<h:panelGrid columns="2">
+	<h:outputLabel
+				value="Please click on Home to visit the Welcome Page:" />
+            <h:link value="Home" outcome="Vemuri_Index.jsf"  ajax="false" />
+	
+	        <h:outputLabel
+				value="Please click on the survey form to take the survey:" />
+			<h:link value="Student Survey" outcome="Vemuri_Survey.jsf" />
+            
+            <h:outputLabel
+				value="Please click on the search surveys to search for someone:" />
+            <h:link value="Search Surveys" outcome="Search.jsf" ajax="false"  />
+    </h:panelGrid>
+ </h:form>
+</h:body>
+</html>

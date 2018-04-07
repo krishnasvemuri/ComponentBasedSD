@@ -1,0 +1,162 @@
+<!--Krishna Sindhuri Vemuri G01024066 SWE_645_HW3-->
+<!-- This is the XHTML Facelet page required for the form -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to the Survey Page</title>
+</h:head>
+<h:body>
+	<style>
+body {
+	background-color: #dfe3ee;
+}
+
+input {
+	color: #8b9dc3;
+}
+
+h1, form, h4, commandButton {
+	color: #3b5998;
+}
+</style>
+	<h:form id="surveyForm">
+		<h1>Student Survey Page</h1>
+		<h4>Krishna Sindhuri Vemuri G01024066</h4>
+		<h:panelGrid columns="3">
+			<p:outputLabel value="First Name" />
+			<p:inputText id="firstName" required="true"
+				value="#{studentBean.firstName}"
+				requiredMessage="You must enter your first name"
+				validatorMessage="You must not enter anything other than alphabets and should not exceed 15 characters">
+				<f:validateRegex pattern="^[a-zA-Z]*" />
+				<f:validateLength minimum="1" maximum="15" />
+			</p:inputText>
+			<p:messages for="firstName" />
+			<p:outputLabel value="Last Name" />
+			<p:inputText id="lastName" required="true"
+				value="#{studentBean.lastName}"
+				requiredMessage="You must enter your last name"
+				validatorMessage="You must not enter anything other than alphabets and should not exceed 15 characters">
+				<f:validateRegex pattern="^[a-zA-Z]*" />
+				<f:validateLength minimum="1" maximum="15" />
+			</p:inputText>
+			<p:messages for="lastName" />
+			<p:outputLabel value="Street Address" />
+			<p:inputText id="streetAddress" required="true"
+				value="#{studentBean.address}"
+				requiredMessage="You must enter your current address"
+				validatorMessage="You must not enter anything other than alphabets, numbers or alphanumeric values and should not exceed 30 characters">
+				<f:validateRegex pattern="^[a-zA-Z0-9\s]*" />
+				<f:validateLength minimum="1" maximum="30" />
+			</p:inputText>
+			<p:messages for="streetAddress" />
+			<p:outputLabel value="Zip" />
+			<p:inputText id="zip" required="true" value="#{studentBean.zip}"
+				requiredMessage="You must enter your zip code"
+				validatorMessage="You must not enter anything other than numbers and should be of exactly 5 digits">
+				<f:validateRegex pattern="^[0-9]*" />
+				<f:ajax execute="zip" event="keyup" render="city state"/>
+			</p:inputText>
+			<p:messages for="zip" />
+			<p:outputLabel value="City" />
+			<p:inputText id="city" required="true" value="#{studentBean.city}"
+				requiredMessage="You must enter your current city"
+				validatorMessage="You must not not enter anything other than alphabets">
+				<f:ajax execute="zip" event="keyup" render="city state"/>
+				<f:validateRegex pattern="^[a-zA-Z]*" />
+			</p:inputText>
+			<p:messages for="city" />
+			<p:outputLabel value="State" />
+			<p:inputText id="state" required="true" value="#{studentBean.state}"
+				requiredMessage="You must enter your current state"
+				validatorMessage="You must not not enter anything other than alphabets">
+				<f:validateRegex pattern="^[a-zA-Z]*" />
+			</p:inputText>
+			<p:messages for="state" />
+			<p:outputLabel value="Telephone Number" />
+			<p:inputMask id="telephoneNumber" mask="(999)-999-9999"
+				required="true" value="#{studentBean.phone}"
+				requiredMessage="You must enter your phone number"
+				validatorMessage="Your must enter your telephone number in the following pattern (xxx)-xxx-xxxx">
+			</p:inputMask>
+			<p:messages for="telephoneNumber" />
+			<p:outputLabel value="E-mail" />
+			<p:inputText id="email" required="true" value="#{studentBean.email}"
+				requiredMessage="You must enter your email"
+				validatorMessage="Your must enter a valid email">
+				<f:validateRegex
+					pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+			</p:inputText>
+			<p:messages for="email" />
+			<p:outputLabel value="Date of Survey" />
+			<p:calendar id="dateOfSurvey" required="true"
+				value="#{studentBean.dos}"
+				requiredMessage="You must enter the date of survey">
+			</p:calendar>
+			<p:messages for="dateOfSurvey" />
+			<p:outputLabel value="Date of Start" />
+			<p:calendar id="dateOfStart" required="true"
+				value="#{studentBean.dos1}"
+				requiredMessage="You must enter the date of start">
+			</p:calendar>
+			<p:messages for="dateOfStart" />
+		</h:panelGrid>
+
+		<p:outputLabel value="What did you like the most about the campus?" />
+		<p:selectManyCheckbox id="likedMost" layout="pageDirection"
+			value="#{studentBean.likedMost}">
+			<f:selectItem itemValue="students" itemLabel="Students"></f:selectItem>
+			<f:selectItem itemValue="location" itemLabel="Location"></f:selectItem>
+			<f:selectItem itemValue="campus" itemLabel="Campus"></f:selectItem>
+			<f:selectItem itemValue="atmosphere" itemLabel="Atmosphere"></f:selectItem>
+			<f:selectItem itemValue="dormRooms" itemLabel="Dorm Rooms"></f:selectItem>
+			<f:selectItem itemValue="sports" itemLabel="Sports"></f:selectItem>
+		</p:selectManyCheckbox>
+		<p:outputLabel value="How were you interested in GMU?" />
+		<p:selectOneRadio id="interested" layout="pageDirection"
+			value="#{studentBean.interested}">
+			<f:selectItem itemValue="friends" itemLabel="Friends"></f:selectItem>
+			<f:selectItem itemValue="television" itemLabel="Television"></f:selectItem>
+			<f:selectItem itemValue="internet" itemLabel="Internet"></f:selectItem>
+			<f:selectItem itemValue="other" itemLabel="Other"></f:selectItem>
+		</p:selectOneRadio>
+		<h:panelGrid columns="3">
+			<p:outputLabel
+				value="What is the likelihood of recommending this school to other prospective students?" />
+			<p:autoComplete id="likelihood" value="#{studentBean.likelihood}"
+				completeMethod="#{studentBean.completeLikelihood}"
+				forceSelection="true" required="true"
+				requiredMessage="You must choose an option">
+			</p:autoComplete>
+			<p:messages for="likelihood" />
+		</h:panelGrid>
+		<h:panelGrid columns="3">
+			<p:outputLabel
+				value="Raffle(Enter atleast 10 comma seperated numbers)" />
+			<p:inputText id="Raffle" value="#{studentBean.raffle}"
+				required="true"
+				requiredMessage="You must enter values for the raffle ">
+
+			</p:inputText>
+			<p:messages for="Raffle" />
+		</h:panelGrid>
+		<h:panelGrid columns="2">
+			<p:outputLabel value="Additional Comments" />
+			<p:inputText id="additionalComments" value="#{studentBean.comments}">
+			</p:inputText>
+			<p:commandButton style="font-weight:bold" value="Submit"
+				action="#{studentserviceBean.showSubmit}" ajax="false">
+			</p:commandButton>
+			<p:commandButton style="font-weight:bold" value="Cancel" type="reset"
+				ajax="false">
+			</p:commandButton>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

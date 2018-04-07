@@ -1,0 +1,31 @@
+<!--Krishna Sindhuri Vemuri G01024066 SWE_645_HW2 -->
+<!-- This is the simple acknowledgement page for the user after submitting the survey -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head> 
+    <title>Thankyou!!!!!</title> 
+</h:head>
+<h:body>
+     <style>
+         body {
+         background-color: 	#dfe3ee;
+         }
+		 h1,p{
+		 color :#3b5998;
+		 }
+     </style>
+   <h1>Thank You #{studentBean.firstName} #{studentBean.lastName} for taking the survey!</h1>
+	
+      <h:panelGrid columns="2">
+      <p>Mean: #{winningresultBean.mean}</p>
+      <br></br>
+      <p>Standard Deviation: #{winningresultBean.standardDeviation}</p>  
+      </h:panelGrid> 
+      
+      <p>Please click on the link to take another survey:</p>
+	<h:link value="Student Survey" outcome="Vemuri_Survey.jsf" />
+   </h:body>
+   </html>
